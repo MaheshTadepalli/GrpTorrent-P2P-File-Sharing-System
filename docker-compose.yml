@@ -1,0 +1,38 @@
+services:
+  tracker:
+    build: .
+    command: python3 tracker/tracker.py --host 0.0.0.0 --port 8080
+    ports:
+      - "8080:8080"
+
+  seed:
+    build: .
+    depends_on:
+      - tracker
+    command: >
+      bash -lc "mkdir -p /data &&
+      python3 - <<'PY'
+from pathlib import Path
+p=Path('/data/source.bin')
+p.write_bytes((b'GrpTorrent docker seed data\n' * 65536)[:1048576])
+PY
+      && /app/build/grptorrent create /data/source.bin http://tracker:8080/announce /data/source.grptorrent 65536
+      && /app/build/grptorrent seed /data/source.grptorrent /data/source.bin 9000 /data/seed.state"
+    ports:
+      - "9000:9000"
+    volumes:
+      - swarm-data:/data
+
+  leecher:
+    build: .
+    depends_on:
+      - tracker
+      - seed
+    command: >
+      bash -lc "sleep 2 &&
+      /app/build/grptorrent leech /data/source.grptorrent /data/out.bin 9001 /data/out.state || true"
+    volumes:
+      - swarm-data:/data
+
+volumes:
+  swarm-data:

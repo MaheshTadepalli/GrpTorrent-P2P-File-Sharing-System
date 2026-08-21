@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\mine\GrpTorrent-P2P_File_Sharing_System\src\grptorrent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\mine\GrpTorrent-P2P_File_Sharing_System\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{AFC887B6-2D11-38A7-9CA7-CE72D3286685}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

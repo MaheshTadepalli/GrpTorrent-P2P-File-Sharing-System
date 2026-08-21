@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\mine\GrpTorrent-P2P_File_Sharing_System\build\CMakeFiles\94c3af095e08ab8fd33d1b3a0c4e1159\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{A4DD28D4-CC32-383F-A9D8-4343BDE42BB6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
