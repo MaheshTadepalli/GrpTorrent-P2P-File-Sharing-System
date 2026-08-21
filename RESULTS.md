@@ -1,6 +1,6 @@
 # Measured Results
 
-Measured locally on 2026-08-21 in this workspace.
+
 
 ## Swarm Benchmark
 
